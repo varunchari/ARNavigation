@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="speed_text_size">50sp</dimen>
+    <dimen name="mph_text_size">10sp</dimen>
+    <dimen name="city_text_size">15sp</dimen>
+    <dimen name="temp_text_size">35sp</dimen>
+</resources>

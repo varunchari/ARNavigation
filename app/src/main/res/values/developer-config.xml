@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Please put your MAPBOX_ACCESS_TOKEN here -->
+<resources>
+    <string name="mapbox_access_token">sk.eyJ1IjoidmFydW5jaGFyaSIsImEiOiJja2NtNmliZGcwNWNrMnNwaGVwaWxvOHo0In0.Bcrq_2uiezTDZWB62xbZSw</string>
+</resources>

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">AR Navigation</string>
+    <string name="ext_video_example">External Video Source Example</string>
+    <string name="safety_example">Safety Example</string>
+    <string name="ar_example">AR Example</string>
+    <string name="ar_customization_example">AR Customization Example</string>
+    <string name="custom_detections_example">Custom Detections Example</string>
+    <string name="poi_example">POI Example</string>
+    <string name="camera_calibration_progress">Camera calibration: %1$d %%</string>
+    <string name="usb_video_source_example">Usb Camera Example</string>
+    <string name="user_location_permission_explanation">User location permission explanation</string>
+    <string name="user_location_permission_not_granted">User location permission not granted</string>
+    <string name="vision_not_supported_title">Device is not supported</string>
+    <string name="vision_not_supported_message">Vision SDK does not support this device yet, check more details at &lt;a href=\"https://docs.mapbox.com/android/vision/overview/#requirements\">docs.mapbox.com&lt;/a></string>
+    <string name="offline_version_key" translatable="false">offline_preference_key</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="current_night_mode" translatable="false">current_night_mode</string>
+
+    <string name="title_activity_ar_navigation">ArNavigationActivity</string>
+</resources>

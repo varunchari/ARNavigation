@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    tools:context=".FullscreenActivity">
+
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        mapbox:mapbox_cameraTargetLat="38.9098"
+        mapbox:mapbox_cameraTargetLng="-77.0295"
+        mapbox:mapbox_cameraZoom="12">
+
+    </com.mapbox.mapboxsdk.maps.MapView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/currentLocationButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:layout_margin="15dp"
+            android:backgroundTint="#6C7BCA"
+            mapbox:srcCompat="@android:drawable/ic_menu_mylocation" />
+
+        <ImageButton
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="15dp"
+            mapbox:srcCompat="@drawable/ic_navigation" />
+
+        <ImageButton
+            android:id="@+id/startArNavButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="15dp"
+            mapbox:srcCompat="@drawable/ic_navigation" />
+
+    </LinearLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_search_origin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|left"
+        android:layout_margin="15dp"
+        android:clickable="true"
+        mapbox:backgroundTint="#6C7BCA"
+        mapbox:fabSize="auto"
+        mapbox:maxImageSize="36dp"
+        mapbox:srcCompat="@android:drawable/ic_menu_search" />
+
+    <TextView
+        android:id="@+id/routeInfo"
+        android:layout_width="246dp"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="25dp"
+        android:background="#2196F3"
+        android:backgroundTint="@color/mapbox_navigation_route_layer_blue" />
+
+    <TextView
+        android:id="@+id/start_loc"
+        android:layout_width="190dp"
+        android:layout_height="31dp"
+        android:layout_gravity="top"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="25dp"
+        android:background="#8A8ADC"
+        android:text="Origin" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_search_dest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="75dp"
+        android:clickable="true"
+        mapbox:backgroundTint="#6C7BCA"
+        mapbox:maxImageSize="36dp"
+        mapbox:srcCompat="@android:drawable/ic_menu_search" />
+
+    <TextView
+        android:id="@+id/dest_loc"
+        android:layout_width="190dp"
+        android:layout_height="31dp"
+        android:layout_gravity="top"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="85dp"
+        android:background="#8A8ADC"
+        android:text="Destination" />
+
+    <ImageButton
+        android:id="@+id/directionsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_margin="25dp"
+        mapbox:backgroundTint="#6C7BCA"
+        mapbox:srcCompat="@drawable/ic_route_preview_dark" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

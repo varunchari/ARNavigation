@@ -1,0 +1,89 @@
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+project.archivesBaseName = project.property('mapboxArtifactName')
+project.version = project.property('versionName')
+group = project.property('mapboxArtifactGroup')
+version = project.property('versionName')
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            name project.archivesBaseName
+            description project.property('mapboxArtifactDescription')
+            url project.property('mapboxArtifactUrl')
+            inceptionYear project.property('mapboxArtifactInceptionYear')
+
+            packaging 'aar'
+            groupId project.property('mapboxArtifactGroup')
+            artifactId project.archivesBaseName
+            version project.property('versionName')
+
+            scm {
+                connection project.property('mapboxArtifactGitUrl')
+                url project.property('mapboxArtifactUrl')
+            }
+
+            developers {
+                developer {
+                    name project.property('mapboxArtifactDeveloperName')
+                }
+            }
+
+            licenses {
+                license {
+                    name project.property('mapboxLicenseName')
+                    url project.property('mapboxLicenseUrl')
+                    distribution 'repo'
+                }
+            }
+        }
+    }
+}
+
+bintray {
+    user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
+    key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+
+    if (user == null || user.empty) {
+        throw new Exception("Bintray userName is null or empty")
+    }
+    if (key == null || key.empty) {
+        throw new Exception("Bintray apiKey is null or empty")
+    }
+
+    configurations = ['archives']
+
+    dryRun = project.hasProperty('bintrayDryRun') ? project.property('bintrayDryRun').toBoolean() : true // run as dry-run, without deploying
+    publish = project.hasProperty('bintrayPublish') ? project.property('bintrayPublish').toBoolean() : false // auto publish after an upload
+    override = project.hasProperty('bintrayOverride') ? project.property('bintrayOverride').toBoolean() : false // override published versions
+
+    pkg {
+        userOrg = project.property('mapboxArtifactUserOrg')
+        repo = project.property('mapboxArtifactRepo')
+        name = project.archivesBaseName
+        desc = project.property('mapboxArtifactDescription')
+
+        websiteUrl = project.property('mapboxArtifactUrl')
+        issueTrackerUrl = project.property('mapboxArtifactTrackerUrl')
+        vcsUrl = project.property('mapboxArtifactGitUrl')
+
+        licenses = [project.property('mapboxLicenseName')]
+
+        version {
+            name = project.property('versionName')
+
+            desc = project.property('mapboxArtifactDescription')
+            released = new Date()
+
+            gpg {
+                sign = false
+                passphrase = project.hasProperty('gpgPassphrase') ? project.property('gpgPassphrase') : System.getenv('GPG_PASSPHRASE')
+            }
+
+            mavenCentralSync {
+                sync = false
+            }
+        }
+    }
+}
